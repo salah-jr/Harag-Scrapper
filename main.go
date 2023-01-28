@@ -29,5 +29,6 @@ func main() {
 		})
 		fmt.Println("Scrapping Complete")
 	})
+
 	c.Visit("https://haraj.com.sa/search/شريك?duringdate=1months")
 }
