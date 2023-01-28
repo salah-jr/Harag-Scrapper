@@ -22,12 +22,12 @@ func main() {
 
 	c := colly.NewCollector()
 	c.OnHTML("#postsList", func(e *colly.HTMLElement) {
-		e.ForEach("div", func(_ int, el *colly.HTMLElement) {
+		e.ForEach(".text-text-title", func(_ int, el *colly.HTMLElement) {
 			writer.Write([]string{
 				el.ChildText("h2"),
 			})
 		})
 		fmt.Println("Scrapping Complete")
 	})
-	c.Visit("https://haraj.com.sa/search/مطلوب%20شريك?duringdate=1months")
+	c.Visit("https://haraj.com.sa/search/شريك?duringdate=1months")
 }
